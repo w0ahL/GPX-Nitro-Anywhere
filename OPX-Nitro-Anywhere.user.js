@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OPX Nitro Anywhere
-// @namespace    https://update.greasyfork.org/scripts/482963/Opera%20GX%20Nitro%20Promotion%20Anywhere.user.js
-// @version      1.0.5
+// @namespace    https://update.greasyfork.org/scripts/482963/OPX%20Nitro%20Anywhere.user.js
+// @version      1.0.6
 // @description  This script allows you to get a nitro subscription code from Opera GX without having Opera GX to claim it.
 // @author       104xvision
 // @match        https://www.opera.com/gx/discord-nitro
@@ -35,6 +35,9 @@
     }
 
     setUserAgent(window, navigator.userAgent + " OPX/1.0");
+
+    // opr is not defined error fix, just run this eariler
+    getRandomUUID();
 
     document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("#claim-button").addEventListener("click", function() {
